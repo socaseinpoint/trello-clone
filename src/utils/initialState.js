@@ -1,35 +1,42 @@
-export const initialColumns = [
-  {
-    id: 1,
-    title: 'To DO',
-    cards: [1],
+export const initialColumns = {
+  byId: {
+    key1: {
+      title: 'To DO',
+    },
+    2: {
+      title: 'In Progress',
+    },
+    3: {
+      title: 'Testing',
+    },
+    4: {
+      title: 'Done',
+    },
   },
-  {
-    id: 2,
-    title: 'In Progress',
-    cards: [],
-  },
-  {
-    id: 3,
-    title: 'Testing',
-    cards: [],
-  },
-  {
-    id: 4,
-    title: 'Done',
-    cards: [],
-  },
-];
+  allIds: ['key1', 2, 3, 4],
+};
+
+export const initialCardColumnsRelation = {
+  key1: [
+    1, 2,
+  ],
+};
 
 export const initialCards = [
   {
     id: 1,
-    body: 'Initial Card',
+    title: 'Initial Card',
+    comments: [],
+  },
+  {
+    id: 2,
+    title: 'Initial Card 2',
     comments: [],
   },
 ];
 
 export default {
   columns: initialColumns,
+  cardColumnsRelation: initialCardColumnsRelation,
   cards: initialCards,
 };

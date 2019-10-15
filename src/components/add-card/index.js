@@ -1,17 +1,22 @@
 import React, { useState } from 'react';
+import { useStateValue } from '../../state';
 import PropTypes from 'prop-types';
-import { addCard } from '../actions/card';
+import { addCard } from '../../actions/cards';
 
-const AddCard = ({ id, store, setStore }) => {
+const AddCard = ({ id }) => {
   const [value, setValue] = useState('');
+  const [state, dispatch] = useStateValue();
 
   function handleChange(e) {
-    setValue(id, e.target.value);
+    setValue(e.target.value);
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    setStore(addCard({ store }));
+    dispatch(addCard({
+      title: value,
+      target: id,
+    }));
   }
 
   return (
