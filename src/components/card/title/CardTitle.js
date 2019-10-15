@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { updateCard } from '../../../actions/cards';
 import { useStateValue } from '../../../state';
 import styles from './title.module.css';
+import editSvg from './edit.svg'; 
 
 const CardTitle = ({ title, id }) => {
   const [editor, setEditor] = useState(false);
@@ -21,9 +22,13 @@ const CardTitle = ({ title, id }) => {
   return (
     <div className={styles.title}>
       {
-        !editor ? <div>{title}</div> : <div><input value={title} onChange={handleChange} /></div>
+        !editor
+          ? <div className={styles.text}>{title}</div>
+          : <input value={title} onChange={handleChange} className={styles.input} />
       }
-      <div onClick={handleToggleClick} >Toggle</div>
+      <div className={styles.edit} onClick={handleToggleClick} >
+        <img src={editSvg} alt='edit' />
+      </div>
     </div>
   );
 };

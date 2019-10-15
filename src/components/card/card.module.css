@@ -1,5 +1,7 @@
 .card {
+  position: relative;
   background: white;
   margin-bottom: 0.5em;
   padding: 0.5em;
+  border-radius: 10px;
 }

@@ -1,0 +1,14 @@
+.remove {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: gray;
+  right: 0.5em;
+  bottom: 0.5em;
+  border-radius: 100%
+}
+
+.icon {
+  width: 100%;
+  border-radius: 100%;
+}

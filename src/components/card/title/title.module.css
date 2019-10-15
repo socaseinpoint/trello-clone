@@ -1,3 +1,20 @@
 .title {
   margin-bottom: 1em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.text {
+  border: 1px solid white;
+}
+
+.input {
+  width: 100%;
+  display: block;
+  padding: 0;
+  border: 1px solid gray;
+}
+
+.edit {
+  margin-left: 0.5em;
 }

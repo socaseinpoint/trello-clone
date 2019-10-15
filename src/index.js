@@ -5,6 +5,7 @@ import { StateProvider } from './state';
 import reducer from './reducers';
 import initialState from './utils/initialState';
 import * as serviceWorker from './serviceWorker';
+import styles from './styles.css';
 
 ReactDOM
   .render(

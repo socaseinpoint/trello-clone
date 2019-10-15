@@ -7,14 +7,11 @@ const Card = ({ title, comments, id }) => {
   return (
     <div className={styles.card}>
       <CardTitle title={title} id={id} />
-      { comments && comments.length }
+      { comments ? comments.length : null }
       <CardRemove id={id} />
     </div>
   );
 };
 
-Card.defaultProps = {
-  comments: [],
-};
 
 export default Card;
