@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './pages/app';
 import { StateProvider } from './state';
-import reducer from './reducers';
+import reducer from './reducers/index';
 import initialState from './utils/initialState';
 import * as serviceWorker from './serviceWorker';
 import styles from './styles.css';

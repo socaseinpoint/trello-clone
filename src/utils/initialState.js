@@ -1,42 +1,67 @@
-export const initialColumns = {
-  byId: {
-    key1: {
-      title: 'To DO',
-    },
-    2: {
-      title: 'In Progress',
-    },
-    3: {
-      title: 'Testing',
-    },
-    4: {
-      title: 'Done',
-    },
-  },
-  allIds: ['key1', 2, 3, 4],
-};
-
-export const initialCardColumnsRelation = { 
-  key1: [
-    1, 2,
-  ],
-};
-
-export const initialCards = [
+export const columns = [
   {
     id: 1,
-    title: 'Initial Card',
-    comments: [],
+    title: 'To Do',
+  },
+  {
+    id: 2,
+    title: 'In Progress',
+  },
+  {
+    id: 3,
+    title: 'Testing',
+  },
+  {
+    id: 4,
+    title: 'Done',
+  },
+];
+
+export const cards = [
+  {
+    id: 1,
+    title: 'Initial Card 1',
+    body: '',
+    author: 1,
+    column: 1,
   },
   {
     id: 2,
     title: 'Initial Card 2',
-    comments: [],
+    body: '',
+    author: 1,
+    column: 1,
   },
 ];
 
-export default {
-  columns: initialColumns,
-  cardColumnsRelation: initialCardColumnsRelation,
-  cards: initialCards,
+export const comments = [
+  {
+    id: 1,
+    card: 1,
+    title: 'Initial Comment 1',
+  },
+  {
+    id: 1,
+    card: 1,
+    title: 'Initial Comment 2',
+  },
+];
+
+export const users = [
+  {
+    id: 1,
+    name: 'guest',
+  },
+];
+
+export const user = null;
+
+export const initialState = {
+  columns,
+  cards,
+  comments,
+  users,
+  user,
 };
+
+export default initialState;

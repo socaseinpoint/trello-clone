@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { addCard } from '../../actions/cards';
 import styles from './addcart.module.css';
 
-const AddCard = ({ id }) => {
+const AddCard = ({ target }) => {
   const [value, setValue] = useState('');
   const [state, dispatch] = useStateValue();
 
@@ -21,7 +21,7 @@ const AddCard = ({ id }) => {
 
     dispatch(addCard({
       title: value,
-      target: id,
+      target,
     }));
 
     setValue('');
@@ -36,7 +36,7 @@ const AddCard = ({ id }) => {
 };
 
 AddCard.propTypes = {
-  id: PropTypes.number.isRequired,
+  target: PropTypes.number.isRequired,
 };
 
 export default AddCard;
