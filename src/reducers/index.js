@@ -1,4 +1,4 @@
-import { ADD_CARD, REMOVE_CARD } from '../constants/actionTypes';
+import { ADD_CARD, REMOVE_CARD, UPDATE_CARD } from '../constants/actionTypes';
 
 function removeFromCardColumnsRelation(id, cardColumnsRelation) {
   const newRelation = {};
@@ -18,6 +18,20 @@ function addToCardColumnsRelation(id, target, cardColumnsRelation) {
 
   newRelation[target].push(id);
   return newRelation;
+}
+
+function updateCard(cards, changes) {
+  const newCards = cards.map((item) => {
+    if (item.id === changes.id) {
+      item = {
+        ...item,
+        ...changes,
+      };
+    }
+    return item;
+  });
+
+  return newCards;
 }
 
 const reducer = (state, action) => {
@@ -42,12 +56,19 @@ const reducer = (state, action) => {
       };
 
     case REMOVE_CARD:
-      console.log(action.payload.id);
       return {
         ...state,
         cardColumnsRelation: {
           ...removeFromCardColumnsRelation(action.payload.id, state.cardColumnsRelation),
         },
+      };
+
+    case UPDATE_CARD:
+      return {
+        ...state,
+        cards: [
+          ...updateCard(state.cards, action.payload.data),
+        ],
       };
 
     default:

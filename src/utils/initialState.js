@@ -16,7 +16,7 @@ export const initialColumns = {
   allIds: ['key1', 2, 3, 4],
 };
 
-export const initialCardColumnsRelation = {
+export const initialCardColumnsRelation = { 
   key1: [
     1, 2,
   ],

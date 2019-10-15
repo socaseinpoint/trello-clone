@@ -2,7 +2,7 @@ import React from 'react';
 import { removeCard } from '../../../actions/cards';
 import { useStateValue } from '../../../state';
 
-const RemoveCard = ({ id }) => {  
+const CardRemove = ({ id }) => {  
   const [state, dispatch] = useStateValue();
 
   function handleClick() {
@@ -14,4 +14,4 @@ const RemoveCard = ({ id }) => {
   );
 };
 
-export default RemoveCard;
+export default CardRemove;
