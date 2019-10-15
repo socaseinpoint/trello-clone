@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button } from 'react-bootstrap';
 import { useStateValue } from '../../state';
 import PropTypes from 'prop-types';
 import { addCard } from '../../actions/cards';
@@ -30,7 +31,7 @@ const AddCard = ({ target }) => {
   return (
     <form onSubmit={handleSubmit}>
       <input type="text" value={value} onChange={handleChange} className={styles.input} />
-      <input type="submit" value="Add Card" />
+      <Button type="submit">Add Card</Button>
     </form>
   );
 };
