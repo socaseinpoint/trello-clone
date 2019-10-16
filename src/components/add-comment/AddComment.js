@@ -7,7 +7,7 @@ import { useStateValue } from '../../state';
 import { addComment } from '../../actions/comments';
 
 const AddComment = ({ body, id }) => {
-  const [state, dispatch] = useStateValue();
+  const dispatch = useStateValue()[1];
   const [editable, setEditable] = useState(false);
   const [value, setValue] = useState(body);
 

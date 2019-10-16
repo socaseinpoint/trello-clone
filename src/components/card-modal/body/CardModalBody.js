@@ -7,7 +7,7 @@ import { useStateValue } from '../../../state';
 import { updateCard } from '../../../actions/cards';
 
 const CardModalBody = ({ body, id }) => {
-  const [state, dispatch] = useStateValue();
+  const dispatch = useStateValue()[1];
   const [editable, setEditable] = useState(false);
   const [value, setValue] = useState(body);
 

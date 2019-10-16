@@ -6,7 +6,6 @@ import reducer from './reducers/index';
 import initialState from './utils/initialState';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import styles from './styles.css';
 
 ReactDOM
   .render(
