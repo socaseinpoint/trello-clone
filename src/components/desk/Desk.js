@@ -1,11 +1,14 @@
 import React from 'react';
+import Container from 'react-bootstrap/Container';
 import { useStateValue } from '../../state';
 import ColumnList from '../column-list';
 
 const Desk = () => {
   const [{ columns }] = useStateValue();
   return (
-    <ColumnList columns={columns} />
+    <Container>
+      <ColumnList columns={columns} />
+    </Container>
   );
 };
 

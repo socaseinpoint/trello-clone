@@ -1,4 +1,11 @@
-import { ADD_CARD, REMOVE_CARD, UPDATE_CARD } from '../constants/actionTypes';
+import {
+  ADD_CARD,
+  REMOVE_CARD,
+  UPDATE_CARD,
+  ADD_COMMENT,
+  REMOVE_COMMENT,
+  UPDATE_COMMENT,
+} from '../constants/actionTypes';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -35,6 +42,19 @@ const reducer = (state, action) => {
 
             return item;
           }),
+        ],
+      };
+
+    case ADD_COMMENT:
+      return {
+        ...state,
+        comments: [
+          ...state.comments,
+          {
+            id: action.payload.id,
+            card: action.payload.target,
+            title: action.payload.title,
+          },
         ],
       };
 

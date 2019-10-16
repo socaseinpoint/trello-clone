@@ -21,7 +21,7 @@ export const cards = [
   {
     id: 1,
     title: 'Initial Card 1',
-    body: '',
+    body: 'Initial Card Body',
     author: 1,
     column: 1,
   },
@@ -39,11 +39,13 @@ export const comments = [
     id: 1,
     card: 1,
     title: 'Initial Comment 1',
+    author: 1,
   },
   {
-    id: 1,
+    id: 2,
     card: 1,
     title: 'Initial Comment 2',
+    author: 1,
   },
 ];
 

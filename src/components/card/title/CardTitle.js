@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { Button } from 'react-bootstrap';
+import Card from 'react-bootstrap/Card';
+import Form from 'react-bootstrap/Form';
 import { updateCard } from '../../../actions/cards';
 import { useStateValue } from '../../../state';
 import styles from './title.module.css';
-import editSvg from './edit.svg'; 
+import editSvg from './edit.svg';
 
 const CardTitle = ({ title, id }) => {
   const [editor, setEditor] = useState(false);
-  const [state, dispatch] = useStateValue();
+  const dispatch = useStateValue()[1];
 
   function handleChange(e) {
     dispatch(updateCard(id, {
@@ -15,7 +19,8 @@ const CardTitle = ({ title, id }) => {
     }));
   }
 
-  function handleToggleClick() {
+  function handleToggleClick(e) {
+    e.stopPropagation();
     setEditor(!editor);
   }
 
@@ -23,18 +28,23 @@ const CardTitle = ({ title, id }) => {
     <div className={styles.title}>
       {
         !editor
-          ? <div className={styles.text}>{title}</div>
-          : <input value={title} onChange={handleChange} className={styles.input} />
+          ? <Card className={styles.text}>{title}</Card>
+          : <Form.Control value={title} onChange={handleChange} className={styles.input} />
       }
-      <div className={styles.edit} onClick={handleToggleClick} >
-        <img src={editSvg} alt='edit' />
-      </div>
+      <Button className={styles.edit} onClick={handleToggleClick}>
+        <img src={editSvg} alt="edit" />
+      </Button>
     </div>
   );
 };
 
 CardTitle.defaultProps = {
   title: '',
+};
+
+CardTitle.propTypes = {
+  title: PropTypes.string,
+  id: PropTypes.number.isRequired,
 };
 
 export default CardTitle;
