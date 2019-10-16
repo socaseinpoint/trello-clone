@@ -5,6 +5,8 @@ import {
   ADD_COMMENT,
   REMOVE_COMMENT,
   UPDATE_COMMENT,
+  UPDATE_COLUMN,
+  ADD_USER,
 } from '../constants/actionTypes';
 
 const reducer = (state, action) => {
@@ -56,6 +58,15 @@ const reducer = (state, action) => {
             title: action.payload.title,
           },
         ],
+      };
+
+    case ADD_USER:
+      console.log(action.payload);
+      return {
+        ...state,
+        user: {
+          name: action.payload.name,
+        },
       };
 
     default:
