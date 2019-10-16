@@ -22,7 +22,7 @@ Column.defaultProps = {
 };
 
 Column.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   title: PropTypes.string,
   children: PropTypes.node.isRequired,
 };

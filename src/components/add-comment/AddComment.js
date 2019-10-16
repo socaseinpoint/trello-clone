@@ -65,7 +65,7 @@ const AddComment = ({ body, id }) => {
 
 AddComment.propTypes = {
   body: PropTypes.string,
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 AddComment.defaultProps = {

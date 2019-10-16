@@ -49,7 +49,7 @@ const AddCard = ({ target }) => {
 };
 
 AddCard.propTypes = {
-  target: PropTypes.number.isRequired,
+  target: PropTypes.string.isRequired,
 };
 
 export default AddCard;

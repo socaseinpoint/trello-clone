@@ -53,7 +53,7 @@ const CardModalBody = ({ body, id }) => {
         ) : (
           <Card onClick={handleToggleClick}>
             <Card.Body>
-              {body}
+              {body || 'Add description'}
             </Card.Body>
           </Card>
         )}
@@ -72,7 +72,7 @@ const CardModalBody = ({ body, id }) => {
 
 CardModalBody.propTypes = {
   body: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default CardModalBody;

@@ -22,13 +22,13 @@ const CardModal = ({
 CardModal.propTypes = {
   title: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   comments: PropTypes
     .arrayOf(
       PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        author: PropTypes.number.isRequired,
-        card: PropTypes.number.isRequired,
+        id: PropTypes.string.isRequired,
+        author: PropTypes.string.isRequired,
+        card: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
       }),
     )

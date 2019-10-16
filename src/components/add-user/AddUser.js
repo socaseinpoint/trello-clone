@@ -15,11 +15,6 @@ const AddUser = () => {
   function handleSubmit(e) {
     e.preventDefault();
 
-    const user = {
-      name: value,
-    };
-
-    localStorage.setItem('user', JSON.stringify(user));
     dispatch(addUser(value));
   }
 

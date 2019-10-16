@@ -46,7 +46,7 @@ CardTitle.defaultProps = {
 
 CardTitle.propTypes = {
   title: PropTypes.string,
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default CardTitle;

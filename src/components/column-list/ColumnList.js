@@ -29,7 +29,7 @@ const ColumnList = ({ columns }) => {
 ColumnList.propTypes = {
   columns: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number,
+      id: PropTypes.string,
       title: PropTypes.string,
     }),
   ).isRequired,

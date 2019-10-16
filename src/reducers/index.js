@@ -56,6 +56,7 @@ const reducer = (state, action) => {
             id: action.payload.id,
             card: action.payload.target,
             title: action.payload.title,
+            author: state.user.name,
           },
         ],
       };
