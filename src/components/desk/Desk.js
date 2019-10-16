@@ -4,6 +4,7 @@ import { useStateValue } from '../../state';
 import ColumnList from '../column-list';
 import AddUser from '../add-user';
 import { addUser } from '../../actions/user';
+import styles from './desk.module.css';
 
 const Desk = () => {
   const [{ columns, user }, dispatch] = useStateValue();
@@ -17,7 +18,7 @@ const Desk = () => {
   }, []);
 
   return (
-    <Container>
+    <Container className={styles.container}>
       {
         user ? (
           <div><ColumnList columns={columns} /></div>

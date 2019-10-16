@@ -11,7 +11,7 @@ const CardModal = ({
   comments,
 }) => (
   <div>
-    <div>{title}</div>
+    <div className="mb-4">{title}</div>
     <CardModalBody body={body} id={id} />
     <CommentList comments={comments} />
     <AddComment id={id} />

@@ -34,15 +34,15 @@ const AddCard = ({ target }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="mt-4">
       {editable ? (
         <div>
-          <Form.Control type="text" value={value} onChange={handleChange} />
-          <Button type="submit">Add Card</Button>
+          <Form.Control type="text" value={value} onChange={handleChange} className="mb-2" />
+          <Button type="submit" className="mr-2">Add Card</Button>
           <Button type="button" variant="light" onClick={handleToggleClick}>Close</Button>
         </div>
       ) : (
-        <div role="presentation" onClick={handleToggleClick}>Add Card</div>
+        <Button type="button" onClick={handleToggleClick}>Add Card</Button>
       )}
     </form>
   );

@@ -7,13 +7,11 @@ const Comment = ({
   title,
   author,
 }) => (
-  <Card>
+  <Card className="mb-2">
     <Card.Body>
       <Card.Title>
-        Author
+        {author}
       </Card.Title>
-      {id}
-      {author}
       <Card.Text>
         {title}
       </Card.Text>

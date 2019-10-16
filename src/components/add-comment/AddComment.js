@@ -36,14 +36,18 @@ const AddComment = ({ body, id }) => {
     return (
       <div>
         {editable ? (
-          <Form onSubmit={handleSubmit}>
-            <Form.Control type="text" value={value} onChange={handleChange} />
-            <Button type="submit">Save</Button>
-            <Button type="button" variant="light" onClick={handleToggleClick}>x</Button>
-          </Form>
+          <Card>
+            <Card.Body>
+              <Form onSubmit={handleSubmit}>
+                <Form.Control type="text" value={value} onChange={handleChange} className="mb-2" />
+                <Button type="submit" className="mr-2">Save</Button>
+                <Button type="button" variant="light" onClick={handleToggleClick}>x</Button>
+              </Form>
+            </Card.Body>
+          </Card>
         ) : (
           <div role="presentation" onClick={handleToggleClick}>
-            {body ? ({ body }) : <Card>Add Comment</Card>}
+            {body ? ({ body }) : <Card><Card.Body>Add Comment</Card.Body></Card>}
           </div>
         )}
       </div>

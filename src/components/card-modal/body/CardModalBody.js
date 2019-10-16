@@ -39,13 +39,17 @@ const CardModalBody = ({ body, id }) => {
 
   function renderEditor() {
     return (
-      <div>
+      <div className="mb-4">
         {editable ? (
-          <Form onSubmit={handleSubmit}>
-            <Form.Control type="text" value={value} onChange={handleChange} />
-            <Button type="submit">Save</Button>
-            <Button type="button" variant="light" onClick={handleToggleClick}>x</Button>
-          </Form>
+          <Card>
+            <Card.Body>
+              <Form onSubmit={handleSubmit}>
+                <Form.Control type="text" value={value} onChange={handleChange} className="mb-2" />
+                <Button type="submit" className="mr-2">Save</Button>
+                <Button type="button" variant="light" onClick={handleToggleClick}>x</Button>
+              </Form>
+            </Card.Body>
+          </Card>
         ) : (
           <Card onClick={handleToggleClick}>
             <Card.Body>

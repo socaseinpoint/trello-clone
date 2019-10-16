@@ -1,10 +1,12 @@
 .remove {
   position: absolute;
-  width: 15px;
-  height: 15px;
+  display: flex;
+  align-items: center;
+  width: 18px;
+  height: 18px;
   background: gray;
-  right: 0.5em;
-  bottom: 0.5em;
+  right: 5px;
+  bottom: 5px;
   border-radius: 100%
 }
 

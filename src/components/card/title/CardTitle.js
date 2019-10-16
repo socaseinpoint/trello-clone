@@ -24,16 +24,18 @@ const CardTitle = ({ title, id }) => {
     setEditor(!editor);
   }
 
+  function handleTitleClick(e) {
+    e.stopPropagation();
+    setEditor(true);
+  }
+
   return (
     <div className={styles.title}>
       {
         !editor
-          ? <Card className={styles.text}>{title}</Card>
-          : <Form.Control value={title} onChange={handleChange} className={styles.input} />
+          ? <Card className={styles.text} onClick={handleTitleClick}>{title}</Card>
+          : <Form.Control value={title} onClick={handleTitleClick} onChange={handleChange} className={styles.input} />
       }
-      <Button className={styles.edit} onClick={handleToggleClick}>
-        <img src={editSvg} alt="edit" />
-      </Button>
     </div>
   );
 };

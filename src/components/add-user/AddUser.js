@@ -25,7 +25,10 @@ const AddUser = () => {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <Form.Control value={value} onChange={handleChange} />
+      <p>
+        Enter your name
+      </p>
+      <Form.Control value={value} onChange={handleChange} className="mb-4" />
       <Button type="submit">Save</Button>
     </Form>
   );

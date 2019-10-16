@@ -13,9 +13,9 @@ const CardRemove = ({ id }) => {
   }
 
   return (
-    <button type="button" onClick={handleClick} className={styles.remove}>
+    <div type="button" onClick={handleClick} className={styles.remove}>
       <img src={removeSvg} alt="remove" className={styles.icon} />
-    </button>
+    </div>
   );
 };
 

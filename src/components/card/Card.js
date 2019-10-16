@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import CardTitle from './title';
-import styles from './card.module.css';
 import Modal from 'react-bootstrap/Modal';
 import CardModal from '../card-modal';
 import CardBootstrap from 'react-bootstrap/Card';
+import Badge from 'react-bootstrap/Badge';
+import CardRemove from './remove';
 
 const Card = ({ title, body, comments, id }) => {
   const [show, setShow] = useState(false);
@@ -14,10 +15,11 @@ const Card = ({ title, body, comments, id }) => {
 
   return (
     <>
-      <CardBootstrap className={styles.card} onClick={handleShow}>
-        <CardBootstrap.Body>
+      <CardBootstrap onClick={handleShow} className="mb-4">
+        <CardBootstrap.Body className="p-1">
           <CardTitle title={title} id={id} />
-          {comments ? comments.length : null}
+          {comments ? <Badge variant="secondary">{comments.length} comments</Badge> : null}
+          <CardRemove id={id} />
         </CardBootstrap.Body>
       </CardBootstrap>
     
