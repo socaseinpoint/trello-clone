@@ -1,11 +1,12 @@
 import uniqid from 'uniqid';
 import { ADD_COMMENT, REMOVE_COMMENT, UPDATE_COMMENT } from '../constants/actionTypes';
 
-export const addComment = (title, target) => ({
+export const addComment = (title, target, author) => ({
   type: ADD_COMMENT,
   payload: {
     title,
     target,
+    author,
     id: uniqid(),
   },
 });
