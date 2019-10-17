@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Badge from 'react-bootstrap/Badge';
 import CardModalBody from './body';
 import CommentList from '../comment-list';
 import AddComment from '../add-comment';
 import CardTitle from '../card/title';
 import { useStateValue } from '../../state';
-import Badge from 'react-bootstrap/Badge';
 
 function getColumnNameById(columns, id) {
   return columns.find((item) => item.id === id);
@@ -33,6 +33,7 @@ const CardModal = ({
         {' '}
         {author}
       </Badge>
+      <h6>Title:</h6>
       <CardTitle id={id} title={title} />
       <h6>Body:</h6>
       <CardModalBody body={body} id={id} />

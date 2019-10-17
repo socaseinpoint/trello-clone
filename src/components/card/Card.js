@@ -15,10 +15,10 @@ const Card = ({ title, body, comments, id, column, author }) => {
 
   return (
     <>
-      <CardBootstrap onClick={handleShow} className="mb-4">
-        <CardBootstrap.Body className="p-1">
+      <CardBootstrap onClick={handleShow} className="mb-4" >
+        <CardBootstrap.Body className="p-2 pt-4">
           <CardTitle title={title} id={id} />
-          {comments ? <Badge variant="secondary">{comments.length} comments</Badge> : null}
+            {comments ? <Badge variant="secondary">{comments.length} comments</Badge> : null}
           <CardRemove id={id} />
         </CardBootstrap.Body>
       </CardBootstrap>
