@@ -8,3 +8,5 @@ export const UPDATE_COMMENT = 'UPDATE_COMMENT';
 export const ADD_USER = 'ADD_USER';
 
 export const UPDATE_COLUMN = 'UPDATE_COLUMN';
+
+export const LOCAL_STORAGE_TO_STATE = 'LOCAL_STORAGE_TO_STATE';

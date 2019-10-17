@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom';
 import App from './pages/app';
 import { StateProvider } from './state';
 import reducer from './reducers/index';
-import initialState from './utils/initialState';
+import getInitialState from './utils/initialState';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+const state = getInitialState();
+
 ReactDOM
   .render(
-    <StateProvider initialState={initialState} reducer={reducer}>
+    <StateProvider initialState={state} reducer={reducer}>
       <App />
     </StateProvider>,
     document.getElementById('root')

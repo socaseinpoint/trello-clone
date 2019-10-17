@@ -1,24 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Container from 'react-bootstrap/Container';
 import { useStateValue } from '../../state';
 import ColumnList from '../column-list';
 import AddUser from '../add-user';
-import { addUser } from '../../actions/user';
-import styles from './desk.module.css';
 
 const Desk = () => {
-  const [{ columns, user }, dispatch] = useStateValue();
-
-  useEffect(() => {
-    const localUser = localStorage.getItem('user');
-
-    if (localUser) {
-      dispatch(addUser(JSON.parse(localUser).name));
-    }
-  }, []);
+  const [{ columns, user }] = useStateValue();
 
   return (
-    <Container className={styles.container}>
+    <Container className="mt-4">
       <h1>
         {user && user.name}
       </h1>

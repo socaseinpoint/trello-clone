@@ -51,11 +51,21 @@ export const comments = [
 
 export const user = null;
 
-export const initialState = {
+export const initialStateDefault = {
   columns,
   cards,
   comments,
   user,
 };
 
-export default initialState;
+function getInitialState() {
+  const localState = localStorage.getItem('state');
+
+  if (localState) {
+    return JSON.parse(localState);
+  }
+
+  return initialStateDefault;
+}
+
+export default getInitialState;
