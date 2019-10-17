@@ -7,7 +7,7 @@ import CardBootstrap from 'react-bootstrap/Card';
 import Badge from 'react-bootstrap/Badge';
 import CardRemove from './remove';
 
-const Card = ({ title, body, comments, id }) => {
+const Card = ({ title, body, comments, id, column, author }) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -28,7 +28,7 @@ const Card = ({ title, body, comments, id }) => {
           <Modal.Title />
         </Modal.Header>
         <Modal.Body>
-          <CardModal title={title} body={body} id={id} comments={comments} />
+          <CardModal title={title} body={body} id={id} comments={comments} column={column} author={author} />
         </Modal.Body>
       </Modal>
     </>
@@ -39,6 +39,8 @@ Card.propTypes = {
   title: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
+  column: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
   comments: PropTypes
     .arrayOf(
       PropTypes.shape({

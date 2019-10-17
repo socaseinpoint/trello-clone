@@ -22,14 +22,14 @@ export const cards = [
     id: '1',
     title: 'Initial Card 1',
     body: 'Initial Card Body',
-    author: '1',
+    author: 'Guest',
     column: '1',
   },
   {
     id: '2',
     title: 'Initial Card 2',
     body: '',
-    author: '1',
+    author: 'Guest',
     column: '1',
   },
 ];

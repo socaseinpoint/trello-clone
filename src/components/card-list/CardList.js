@@ -17,6 +17,8 @@ const CardList = ({ cards }) => {
           id={item.id}
           key={item.id}
           body={item.body}
+          column={item.column}
+          author={item.author}
           comments={getCommentsFromCard(comments, item.id)}
         />
       ),

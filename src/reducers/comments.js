@@ -12,7 +12,7 @@ const commentsReducer = (state, action) => {
         {
           id: action.payload.id,
           card: action.payload.target,
-          title: action.payload.title,
+          body: action.payload.title,
           author: action.payload.author,
         },
       ];

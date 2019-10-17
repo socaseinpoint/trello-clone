@@ -8,7 +8,7 @@ import { addCard } from '../../actions/cards';
 const AddCard = ({ target }) => {
   const [value, setValue] = useState('');
   const [editable, setEditable] = useState(false);
-  const dispatch = useStateValue()[1];
+  const [{ user }, dispatch] = useStateValue();
 
   function handleChange(e) {
     setValue(e.target.value);
@@ -21,7 +21,7 @@ const AddCard = ({ target }) => {
       return false;
     }
 
-    dispatch(addCard(value, target));
+    dispatch(addCard(value, target, user.name));
 
     setValue('');
     return true;

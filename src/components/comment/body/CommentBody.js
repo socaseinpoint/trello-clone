@@ -53,7 +53,7 @@ const CommentBody = ({ body, id }) => {
         ) : (
           <Card onClick={handleToggleClick}>
             <Card.Body>
-              {body || 'Add description'}
+              {body || 'Comment is empty'}
             </Card.Body>
           </Card>
         )}

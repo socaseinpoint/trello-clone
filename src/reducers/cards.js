@@ -13,6 +13,7 @@ const cardsReducer = (state, action) => {
           id: action.payload.id,
           column: action.payload.target,
           title: action.payload.title,
+          author: action.payload.author,
           body: '',
         },
       ];

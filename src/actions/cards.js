@@ -1,11 +1,12 @@
 import uniqid from 'uniqid';
 import { ADD_CARD, REMOVE_CARD, UPDATE_CARD } from '../constants/actionTypes';
 
-export const addCard = (title, target) => ({
+export const addCard = (title, target, author) => ({
   type: ADD_CARD,
   payload: {
     title,
     target,
+    author,
     id: uniqid(),
   },
 });
