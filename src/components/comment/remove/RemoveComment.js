@@ -2,22 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Badge from 'react-bootstrap/Badge';
 import { useStateValue } from '../../../state';
-import { removeCard } from '../../../actions/cards';
+import { removeComment } from '../../../actions/comments';
 
-const CardRemove = ({ id }) => {
+const RemoveComment = ({ id }) => {
   const dispatch = useStateValue()[1];
 
   function handleClick() {
-    dispatch(removeCard(id));
+    dispatch(removeComment(id));
   }
 
   return (
-    <Badge onClick={handleClick} variant="danger" className="ml-2">Remove</Badge>
+    <Badge onClick={handleClick} variant="danger">Remove</Badge>
   );
 };
 
-CardRemove.propTypes = {
+RemoveComment.propTypes = {
   id: PropTypes.string.isRequired,
 };
 
-export default CardRemove;
+export default RemoveComment;

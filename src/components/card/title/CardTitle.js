@@ -33,12 +33,8 @@ const CardTitle = ({ title, id }) => {
   );
 };
 
-CardTitle.defaultProps = {
-  title: '',
-};
-
 CardTitle.propTypes = {
-  title: PropTypes.string,
+  title: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
 };
 

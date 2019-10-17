@@ -3,7 +3,7 @@ import Comment from '../comment';
 
 const CommentList = ({ comments }) => {
   return (
-    comments.map((item) => <Comment id={item.id} key={item.id} title={item.title} author={item.author} />)
+    comments.map((item) => <Comment id={item.id} key={item.id} body={item.body} author={item.author} />)
   );
 };
 

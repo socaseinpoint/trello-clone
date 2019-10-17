@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
+import RemoveComment from './remove';
+import CommentBody from './body';
 
 const Comment = ({
   id,
-  title,
+  body,
   author,
 }) => (
   <Card className="mb-2">
@@ -12,16 +14,15 @@ const Comment = ({
       <Card.Title>
         {author}
       </Card.Title>
-      <Card.Text>
-        {title}
-      </Card.Text>
+      <CommentBody id={id} body={body} />
+      <RemoveComment id={id} />
     </Card.Body>
   </Card>
 );
 
 Comment.propTypes = {
   id: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
 };
 

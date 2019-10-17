@@ -19,24 +19,18 @@ const commentsReducer = (state, action) => {
 
     case REMOVE_COMMENT:
       return [
-        ...state,
-        {
-          id: action.payload.id,
-          card: action.payload.target,
-          title: action.payload.title,
-          author: state.user.name,
-        },
+        ...state.filter((item) => item.id !== action.payload.id),
       ];
 
     case UPDATE_COMMENT:
       return [
-        ...state,
-        {
-          id: action.payload.id,
-          card: action.payload.target,
-          title: action.payload.title,
-          author: state.user.name,
-        },
+        ...state.map((item) => {
+          if (item.id === action.payload.data.id) {
+            return { ...item, ...action.payload.data };
+          }
+
+          return item;
+        }),
       ];
 
     default:

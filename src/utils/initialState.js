@@ -38,13 +38,13 @@ export const comments = [
   {
     id: '1',
     card: '1',
-    title: 'Initial Comment 1',
+    body: 'Initial Comment 1',
     author: 'Guest',
   },
   {
     id: '2',
     card: '1',
-    title: 'Initial Comment 2',
+    body: 'Initial Comment 2',
     author: 'Guest',
   },
 ];

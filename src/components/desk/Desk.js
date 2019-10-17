@@ -19,6 +19,9 @@ const Desk = () => {
 
   return (
     <Container className={styles.container}>
+      <h1>
+        {user && user.name}
+      </h1>
       {
         user ? (
           <div><ColumnList columns={columns} /></div>
