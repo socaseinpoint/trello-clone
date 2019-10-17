@@ -5,28 +5,30 @@ import {
 } from '../constants/actionTypes';
 
 const commentsReducer = (state, action) => {
+  const { payload } = action;
+
   switch (action.type) {
     case ADD_COMMENT:
       return [
         ...state,
         {
-          id: action.payload.id,
-          card: action.payload.target,
-          body: action.payload.title,
-          author: action.payload.author,
+          id: payload.id,
+          card: payload.target,
+          body: payload.title,
+          author: payload.author,
         },
       ];
 
     case REMOVE_COMMENT:
       return [
-        ...state.filter((item) => item.id !== action.payload.id),
+        ...state.filter((item) => item.id !== payload.id),
       ];
 
     case UPDATE_COMMENT:
       return [
         ...state.map((item) => {
-          if (item.id === action.payload.data.id) {
-            return { ...item, ...action.payload.data };
+          if (item.id === payload.data.id) {
+            return { ...item, ...payload.data };
           }
 
           return item;

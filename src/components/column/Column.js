@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 import AddCard from '../add-card';
+import ColumnTitle from './title';
 
 const Column = ({ title, children, id }) => (
   <Card>
     <Card.Body>
       <Card.Title>
-        <b>{ title }</b>
+        <ColumnTitle title={title} id={id} />
       </Card.Title>
       <div>
         {children}
