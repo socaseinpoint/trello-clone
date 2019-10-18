@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import { addCard } from '../../actions/cards';
 
 const AddCard = ({ target }) => {
@@ -39,7 +39,7 @@ const AddCard = ({ target }) => {
       {editable ? (
         <div>
           <Form.Control type="text" value={value} onChange={handleChange} className="mb-2" />
-          <Button type="submit" className="mr-2">Add Card</Button>
+          <Button type="submit" className="mr-2 mb-2">Add Card</Button>
           <Button type="button" variant="light" onClick={handleToggleClick}>Close</Button>
         </div>
       ) : (

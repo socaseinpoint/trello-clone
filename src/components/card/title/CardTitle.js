@@ -48,7 +48,7 @@ const CardTitle = ({ title, id }) => {
           <Card>
             <Card.Body>
               <Form onSubmit={handleSubmit}>
-                <Form.Control type="text" value={value} onChange={handleChange} className="mb-2" />
+                <Form.Control type="text" value={value} onChange={handleChange} />
                 <Button type="submit" className="mr-2">Save</Button>
                 <Button type="button" variant="light" onClick={handleToggleClick}>Close</Button>
               </Form>

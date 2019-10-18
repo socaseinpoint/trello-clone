@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import Badge from 'react-bootstrap/Badge';
+import Button from 'react-bootstrap/Button';
 import { removeComment } from '../../../actions/comments';
 
 const RemoveComment = ({ id }) => {
@@ -12,7 +12,7 @@ const RemoveComment = ({ id }) => {
   }
 
   return (
-    <Badge onClick={handleClick} variant="danger">Remove</Badge>
+    <Button onClick={handleClick} variant="danger">Remove</Button>
   );
 };
 

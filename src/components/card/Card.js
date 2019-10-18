@@ -19,9 +19,11 @@ const Card = ({ title, body, id, column, author, cardId }) => {
   return (
     <>
       <CardBootstrap onClick={handleShow} className="mb-4" >
-        <CardBootstrap.Body className="p-2 pt-4">
+        <CardBootstrap.Body className="p-2 pt-4 pb-4">
           <CardTitle title={title} id={id} />
+          <div className="mb-4 ml-2">
             {comments ? <Badge variant="secondary">{comments.length} comments</Badge> : null}
+          </div>
           <CardRemove id={id} />
         </CardBootstrap.Body>
       </CardBootstrap>
