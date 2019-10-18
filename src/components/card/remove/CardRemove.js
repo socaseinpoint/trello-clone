@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Badge from 'react-bootstrap/Badge';
-import { useStateValue } from '../../../state';
+import { useDispatch } from 'react-redux';
 import { removeCard } from '../../../actions/cards';
 
 const CardRemove = ({ id }) => {
-  const dispatch = useStateValue()[1];
+  const dispatch = useDispatch();
 
   function handleClick() {
     dispatch(removeCard(id));

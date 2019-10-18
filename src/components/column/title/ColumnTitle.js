@@ -1,11 +1,11 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import Editor from '../../editor';
 import { updateColumn } from '../../../actions/columns';
-import { useStateValue } from '../../../state';
 
 const ColumnTitle = ({ title, id }) => {
-  const dispatch = useStateValue()[1];
+  const dispatch = useDispatch();
 
   function onSave(value) {
     dispatch(updateColumn(id, {

@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
-import PropTypes from 'prop-types';
-import { useStateValue } from '../../state';
+import PropTypes from 'prop-types'
 import { addCard } from '../../actions/cards';
 
 const AddCard = ({ target }) => {
   const [value, setValue] = useState('');
   const [editable, setEditable] = useState(false);
-  const [{ user }, dispatch] = useStateValue();
+  const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
 
   function handleChange(e) {
     setValue(e.target.value);

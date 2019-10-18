@@ -1,11 +1,11 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import Badge from 'react-bootstrap/Badge';
 import CardModalBody from './body';
 import CommentList from '../comment-list';
 import AddComment from '../add-comment';
 import CardTitle from '../card/title';
-import { useStateValue } from '../../state';
 
 function getColumnNameById(columns, id) {
   return columns.find((item) => item.id === id);
@@ -19,7 +19,7 @@ const CardModal = ({
   column,
   author,
 }) => {
-  const [{ columns }] = useStateValue();
+  const columns = useSelector((state) => state.columns);
 
   return (
     <div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStateValue } from '../../state';
+import { useSelector } from 'react-redux';
 import Card from '../card';
 
 function getCommentsFromCard(comments, id) {
@@ -7,7 +7,7 @@ function getCommentsFromCard(comments, id) {
 }
 
 const CardList = ({ cards }) => {
-  const [{ comments }] = useStateValue();
+  const comments = useSelector((state) => state.comments);
 
   return (
     cards.map(

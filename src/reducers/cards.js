@@ -4,7 +4,7 @@ import {
   UPDATE_CARD,
 } from '../constants/actionTypes';
 
-const cardsReducer = (state, action) => {
+const cardsReducer = (state = [], action) => {
   const { payload } = action;
 
   switch (action.type) {

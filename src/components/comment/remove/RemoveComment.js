@@ -1,11 +1,11 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import Badge from 'react-bootstrap/Badge';
-import { useStateValue } from '../../../state';
 import { removeComment } from '../../../actions/comments';
 
 const RemoveComment = ({ id }) => {
-  const dispatch = useStateValue()[1];
+  const dispatch = useDispatch();
 
   function handleClick() {
     dispatch(removeComment(id));

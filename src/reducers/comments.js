@@ -4,7 +4,7 @@ import {
   UPDATE_COMMENT,
 } from '../constants/actionTypes';
 
-const commentsReducer = (state, action) => {
+const commentsReducer = (state = [], action) => {
   const { payload } = action;
 
   switch (action.type) {

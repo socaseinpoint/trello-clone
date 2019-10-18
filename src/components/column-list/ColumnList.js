@@ -1,17 +1,17 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Column from '../column/Column';
 import CardList from '../card-list';
-import { useStateValue } from '../../state';
 
 function getCardFromColumn(cards, id) {
   return cards.filter((item) => item.column === id);
 }
 
 const ColumnList = ({ columns }) => {
-  const [{ cards }] = useStateValue();
+  const cards = useSelector((state) => state.cards);
 
   return (
     <Row>

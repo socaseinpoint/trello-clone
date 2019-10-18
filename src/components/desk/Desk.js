@@ -1,11 +1,12 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import Container from 'react-bootstrap/Container';
-import { useStateValue } from '../../state';
 import ColumnList from '../column-list';
 import AddUser from '../add-user';
 
 const Desk = () => {
-  const [{ columns, user }] = useStateValue();
+  const columns = useSelector((state) => state.columns);
+  const user = useSelector((state) => state.user);
 
   return (
     <Container className="mt-4">

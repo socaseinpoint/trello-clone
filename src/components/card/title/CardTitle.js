@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { Button } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
-import { useStateValue } from '../../../state';
+import { useDispatch } from 'react-redux';
 import { updateCard } from '../../../actions/cards';
 
 const CardTitle = ({ title, id }) => {
-  const dispatch = useStateValue()[1];
+  const dispatch = useDispatch();
   const [editable, setEditable] = useState(false);
   const [value, setValue] = useState(title);
 
