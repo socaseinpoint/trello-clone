@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
+import { getCommentsByCard } from '../../selectors';
 import CardTitle from './title';
 import Modal from 'react-bootstrap/Modal';
 import CardModal from '../card-modal';
@@ -7,8 +9,9 @@ import CardBootstrap from 'react-bootstrap/Card';
 import Badge from 'react-bootstrap/Badge';
 import CardRemove from './remove';
 
-const Card = ({ title, body, comments, id, column, author }) => {
+const Card = ({ title, body, id, column, author, cardId }) => {
   const [show, setShow] = useState(false);
+  const comments = useSelector((state) => getCommentsByCard(state, cardId));
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -41,16 +44,7 @@ Card.propTypes = {
   id: PropTypes.string.isRequired,
   column: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
-  comments: PropTypes
-    .arrayOf(
-      PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        author: PropTypes.string.isRequired,
-        card: PropTypes.string.isRequired,
-        body: PropTypes.string.isRequired,
-      }),
-    )
-    .isRequired,
+  cardId: PropTypes.string.isRequired,
 };
 
 export default Card;

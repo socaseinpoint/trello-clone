@@ -1,13 +1,11 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 import Card from '../card';
+import { getCardsByColumn } from '../../selectors';
 
-function getCommentsFromCard(comments, id) {
-  return comments.filter((item) => item.card === id);
-}
-
-const CardList = ({ cards }) => {
-  const comments = useSelector((state) => state.comments);
+const CardList = ({ columnId }) => {
+  const cards = useSelector((state) => getCardsByColumn(state, columnId));
 
   return (
     cards.map(
@@ -19,11 +17,15 @@ const CardList = ({ cards }) => {
           body={item.body}
           column={item.column}
           author={item.author}
-          comments={getCommentsFromCard(comments, item.id)}
+          cardId={item.id}
         />
       ),
     )
   );
+};
+
+CardList.propTypes = {
+  columnId: PropTypes.string.isRequired,
 };
 
 export default CardList;
